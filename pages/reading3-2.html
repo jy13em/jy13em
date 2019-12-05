@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <script>
+      function drawRect(){
+        var myCanvas = document.getElementById("mycanvas");
+        var ctx = mycanvas.getContext("2d");
+        
+        ctx.fillRect(125, 125, 500, 500);
+        ctx.clearRect(225, 225, 300, 300);
+        ctx.strokeRect(250, 250, 250, 250);
+      }
+      
+      function drawArc(){
+        var mycanvas = document.getElementById("mycanvas");
+        var ctx = mycanvas.getContext("2d");
+        ctx.beginPath()
+        ctx.arc(375, 375, 250, 0, Math.PI * 2, true);
+        
+        ctx.moveTo(200, 375);
+        ctx.arc(375, 375, 175, 0, Math.PI, false);
+        
+        ctx.moveTo(325, 325);
+        ctx.arc(300, 325, 25, 0, Math.PI * 2, true);
+        
+        ctx.moveTo(475, 325);
+        ctx.arc(450, 325, 25, 0, Math.PI * 2, true);
+        
+        ctx.stroke();
+        //ctx.fill();
+      }
+      
+      function drawLine(){
+        var mycanvas = document.getElementById("mycanvas");
+        var ctx = mycanvas. getContext("2d");
+        
+        ctx.beginPath();
+        ctx.moveTo(125, 125);
+        ctx.lineTo(525, 125);
+        ctx.lineTo(125, 525);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(625, 625);
+        ctx.lineTo(625, 225);
+        ctx.lineTo(225, 625);
+        ctx.closePath();
+        ctx.stroke();
+      }
+      
+       function Remove(){
+        var mycanvas = document.getElementById("mycanvas");
+        var ctx = mycanvas. getContext("2d");
+        ctx.clearRect(0, 0, 1000, 1000);
+      }
+        
+    </script>
+  </head>
+ <body>
+   <canvas id="mycanvas" width="1000px" height="1000px" style="border:1px solid black"></canvas>
+   <br/>
+   <button type="button" onclick="drawRect()">Rectangle</button>
+   <button type="button" onclick="drawArc()">Circle</button>
+   <button type="button" onclick="drawLine()">Line</button>
+   <button type="button" onclick="Remove()">Remove</button>
+   <br/>
+   The website is like a white drawing canvas. When we first make a website, there is nothing, but every time we add features and graphics <br/>to the website, we're getting closer and closer to it's original shape.
+As we expand the website one by one, countless canvas comes together to form galleries. 
+<br/>Whenever we visit websites, especially personal ones, we can communicate with them as if we can communicate with a painter through his work when we visit an exhibition of him.
+ </body>
+</html>
